@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>我的导航</title>
 	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="//at.alicdn.com/t/font_584946_gfn98qwaakk2o6r.css">
 </head>
 <body>
 	<header></header>	
@@ -44,7 +45,7 @@
 		}
 		function createButton(id){
 			var button = tag('button')
-			button.textContent = '编辑'
+			// button.textContent = <img src="http://ww1.sinaimg.cn/large/7dbf9c78ly1fpjpjycgp8j205k05kjr9.jpg"/>
 			button.id = id
 			button.onclick = function(xzkjcnxlkcjlk){
 				// xzkjcnxlkcjlk['target'] 就是用户点击的元素
@@ -60,6 +61,11 @@
 				localStorage.setItem('zzz', JSON.stringify(hash))
 			}
 			return button
+		}
+		function createButtoni(className){
+			var buttoni = tag('i')
+			buttoni.className = "iconfont icon-edit"
+			return buttoni
 		}
 		function createImage(domain){
 			var img = tag('img')
@@ -104,7 +110,7 @@
 				var span = createSpan(row[index2])
 
 				var button = createButton(row[index2])
-
+				var buttoni = createButtoni(row[index2])
 				var img = createImage(hash[row[index2]])
 
 				var kbd = tag('kbd')
@@ -113,7 +119,7 @@
 				kbd.appendChild(span)
 				kbd.appendChild(img)
 				kbd.appendChild(button)
-
+				button.appendChild(buttoni)
 				div.appendChild(kbd)
 			}
 		}
